@@ -25,29 +25,28 @@ db.create_all()
 @app.route('/')
 def root():
     """Homepage redirects to list of users."""
-
     return redirect("/users")
 
 # Viewing a user's detail page
 @app.route('/users')
 def user_listing():
     """List of registered users."""
-    pass
+    return render_template("user-list.html")
 
 # Viewing a user's detail page
 @app.route('/user-detail/<user_id>')
 def user_detail(user_id):
     """Profile page for individual user"""
-    pass
+    return render_template("profile.html", user_id=user_id)
 
 # Editing user info
-@app.route('/user-edit/<user_id>')
+@app.route('/user-update/<user_id>')
 def user_edit(user_id):
     """A form for editing a user profile"""
-    pass
+    return render_template("user-update.html", user_id=user_id)
 
 # Creating a new user
-@app.route('/new-user')
+@app.route('/register')
 def new_user():
     """A form for registering a new user"""
-    pass
+    return render_template("register.html")
