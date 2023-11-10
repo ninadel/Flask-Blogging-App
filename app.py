@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect, render_template
 from flask_debugtoolbar import DebugToolbarExtension
+# from models import db, connect_db
 from models import db, connect_db, User
 
 app = Flask(__name__)
@@ -30,19 +31,23 @@ def root():
 # Viewing a user's detail page
 @app.route('/users')
 def user_listing():
+    """List of registered users."""
     pass
 
 # Viewing a user's detail page
-@app.route('/user-detail')
-def user_detail():
+@app.route('/user-detail/<user_id>')
+def user_detail(user_id):
+    """Profile page for individual user"""
     pass
 
 # Editing user info
-@app.route('/user-edit')
-def user_edit():
+@app.route('/user-edit/<user_id>')
+def user_edit(user_id):
+    """A form for editing a user profile"""
     pass
 
 # Creating a new user
 @app.route('/new-user')
 def new_user():
+    """A form for registering a new user"""
     pass
