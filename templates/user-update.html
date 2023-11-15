@@ -1,5 +1,16 @@
 {% extends 'base.html' %} {% block title %}Mad Libs{% endblock %} {% block
 content %}
-<h1>Here is your story!</h1>
-<p>{{result_story}}</p>
+<h1>Create a user</h1>
+<form action="/users/{{user.id}}/edit" method="POST">
+  <!-- first name  -->
+  <p>
+    <input type="text" placeholder="{{user.first_name}}" name="first-name" />
+  </p>
+  <!-- last name  -->
+  <p><input type="text" placeholder="{{user.last_name}}" name="last-name" /></p>
+  <!-- image url  -->
+  <p><input type="text" placeholder="{{user.image_url}}" name="image-url" /></p>
+  <!-- Add cancel button -->
+  <button type="submit">Update</button>
+</form>
 {% endblock %}

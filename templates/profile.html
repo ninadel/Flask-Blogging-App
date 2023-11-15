@@ -1,5 +1,7 @@
-{% extends 'base.html' %} {% block title %}Mad Libs{% endblock %} {% block
-content %}
-<h1>Here is your story!</h1>
-<p>{{result_story}}</p>
+{% extends 'base.html' %} {% block title %}User Profile - {{user.full_name}}{%
+endblock %} {% block content %}
+<h1>{{user.full_name}}</h1>
+<p>Hello!</p>
+<img alt="user profile picture" src="{{user.image_url}}" />
+<p><a href="/">All users</a></p>
 {% endblock %}

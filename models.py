@@ -12,10 +12,12 @@ class User(db.Model):
 
     __tablename__ = "users"
 
-    user_id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.Text, nullable=False)
-    last_name = db.Column(db.Text, nullable=False)
-    image_url = db.Column(db.Text, nullable=False, default=DEFAULT_IMAGE_URL)
+    id = db.Column(db.Integer,
+                   primary_key=True,
+                   autoincrement=True)
+    first_name = db.Column(db.Text(50), nullable=False)
+    last_name = db.Column(db.Text(50), nullable=False)
+    image_url = db.Column(db.Text(100), nullable=False, default=DEFAULT_IMAGE_URL)
 
     @property
     def full_name(self):
