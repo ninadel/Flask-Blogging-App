@@ -35,7 +35,7 @@ toolbar = DebugToolbarExtension(app)
 
 
 connect_db(app)
-db.create_all()
+# db.create_all()
 
 
 @app.route('/')
